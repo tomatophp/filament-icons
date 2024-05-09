@@ -12,9 +12,13 @@ Heroicons Picker and Column for FilamentPHP
 ## Screenshots
 
 ![Dark Input](https://github.com/tomatophp/filament-icons/blob/master/arts/input-dark.png)
+
 ![Dark Input Select](https://github.com/tomatophp/filament-icons/blob/master/arts/input-select-dark.png)
+
 ![Light Input](https://github.com/tomatophp/filament-icons/blob/master/arts/input-light.png)
+
 ![Light Input Select](https://github.com/tomatophp/filament-icons/blob/master/arts/input-select-light.png)
+
 ![Table Column](https://github.com/tomatophp/filament-icons/blob/master/arts/column.png)
 
 ## Installation

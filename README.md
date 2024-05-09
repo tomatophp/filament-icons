@@ -9,41 +9,57 @@
 
 Heroicons Picker and Column for FilamentPHP
 
+## Screenshots
+
+![Dark Input](https://github.com/tomatophp/filament-icons/blob/master/arts/input-dark.pn)
+![Dark Input Select](https://github.com/tomatophp/filament-icons/blob/master/arts/input-select-dark.png)
+![Light Input](https://github.com/tomatophp/filament-icons/blob/master/arts/input-light.png)
+![Light Input Select](https://github.com/tomatophp/filament-icons/blob/master/arts/input-select-light.png)
+![Table Column](https://github.com/tomatophp/filament-icons/blob/master/arts/column.png)
+
 ## Installation
 
 ```bash
 composer require tomatophp/filament-icons
 ```
-after install your package please run this command
 
-```bash
-php artisan filament-icons:install
+## Usage
+
+```php
+use TomatoPHP\FilamentIcons\Components\IconPicker;
+
+public static function form(Form $form): Form
+{
+    return $form
+        ->schema([
+            IconPicker::make('icon')
+                ->default('heroicon-o-academic-cap')
+                ->label('Icon'),
+        ]);
+}
 ```
+
+```php
+use TomatoPHP\FilamentIcons\Components\IconColumn;
+
+public static function table(Table $table): Table
+{
+    return $table
+        ->columns([
+            IconColumn::make('icon')
+                ->label('Icon'),
+        ]);
+}
+```
+
+
 
 ## Publish Assets
-
-you can publish config file by use this command
-
-```bash
-php artisan vendor:publish --tag="filament-icons-config"
-```
 
 you can publish views file by use this command
 
 ```bash
 php artisan vendor:publish --tag="filament-icons-views"
-```
-
-you can publish languages file by use this command
-
-```bash
-php artisan vendor:publish --tag="filament-icons-lang"
-```
-
-you can publish migrations file by use this command
-
-```bash
-php artisan vendor:publish --tag="filament-icons-migrations"
 ```
 
 ## Support

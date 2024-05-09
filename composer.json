@@ -1,0 +1,43 @@
+{
+    "name": "tomatophp/filament-icons",
+    "type": "library",
+    "description": "Heroicons Picker and Column for FilamentPHP",
+    "keywords": [
+        "php",
+        "laravel",
+        "heroicons",
+        "filament",
+        "filamentphp",
+        "icons picker",
+        "component"
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "TomatoPHP\\FilamentIcons\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TomatoPHP\\FilamentIcons\\FilamentIconsServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Fady Mondy",
+            "email": "info@3x1.io"
+        }
+    ],
+    "require": {
+        "php": "^8.1|^8.2",
+        "tomatophp/console-helpers": "^1.1",
+        "filament/filament": "^3.0.0"
+    }
+}

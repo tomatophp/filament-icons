@@ -3,6 +3,7 @@
 namespace TomatoPHP\FilamentIcons;
 
 use Illuminate\Support\ServiceProvider;
+use TomatoPHP\FilamentIcons\Services\FilamentIconsServices;
 
 
 class FilamentIconsServiceProvider extends ServiceProvider
@@ -16,6 +17,14 @@ class FilamentIconsServiceProvider extends ServiceProvider
         $this->publishes([
            __DIR__.'/../resources/views' => resource_path('views/vendor/filament-icons'),
         ], 'filament-icons-views');
+
+        $this->app->bind('filament-icons', function () {
+            return new FilamentIconsServices();
+        });
+
+        $this->loadViewComponentsAs('filament', [
+            Components\Icon::class,
+        ]);
     }
 
     public function boot(): void

@@ -56,7 +56,35 @@ public static function table(Table $table): Table
 }
 ```
 
+## Add Custom Icons
 
+you can add a custom icon lib by use this Facade class inside your provider like this
+
+```php
+use TomatoPHP\FilamentIcons\Facades\FilamentIcons;
+
+public function boot(): void
+{
+    FilamentIcons::register('boxicons')
+        ->asset('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css')
+        ->template('<i class="{ ICON }"></i>', 'text-xl', 'text-sm')
+        ->icons([
+            "bx bx-accessibility",
+            "bx bx-add-to-queue",
+            "bx bx-adjust"
+        ])  
+        ->replace(['bx ', 'bxs-', 'bxl-', 'bx-'])
+        ->save();
+}
+```
+
+than you need to clear cache by use this command
+
+```bash
+php artisan cache:clear
+```
+
+and on your config file stop cache and than refresh your app then return it back to true if you like to cache icons.
 
 ## Publish Assets
 
@@ -64,6 +92,14 @@ you can publish views file by use this command
 
 ```bash
 php artisan vendor:publish --tag="filament-icons-views"
+```
+
+## Publish Config
+
+you can publish config file by use this command
+
+```bash
+php artisan vendor:publish --tag="filament-icons-config"
 ```
 
 ## Support

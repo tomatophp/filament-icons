@@ -95,6 +95,6 @@ class Icon extends Model
 
     protected function sushiShouldCache()
     {
-        return false;
+        return config('filament-icons.cache', true);
     }
 }

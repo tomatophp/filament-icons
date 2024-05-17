@@ -22,6 +22,12 @@ class FilamentIconsServiceProvider extends ServiceProvider
             return new FilamentIconsServices();
         });
 
+        $this->mergeConfigFrom(__DIR__.'/../config/filament-icons.php', 'filament-icons');
+
+        $this->publishes([
+            __DIR__.'/../config/filament-icons.php' => config_path('filament-icons.php'),
+        ], 'filament-icons-config');
+
         $this->loadViewComponentsAs('filament', [
             Components\Icon::class,
         ]);

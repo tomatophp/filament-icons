@@ -81,10 +81,10 @@ public function boot(): void
 than you need to clear cache by use this command
 
 ```bash
-php artisan cache:clear
+php artisan filament-icons:clear
 ```
 
-and on your config file stop cache and than refresh your app then return it back to true if you like to cache icons.
+you can try add Box Icons using this snap [Box Icon Snap](boxicons-provider-snap.md)
 
 ## Publish Assets
 

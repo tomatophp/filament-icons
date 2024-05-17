@@ -6,8 +6,14 @@
         $template = $getIcon ?  str($getIcon->template)->replace('{ ICON }', $getIcon->name)->toString() : null;
     @endphp
 
-    <div class="{{ $style ?: $getIcon->template_class }}">
-        {!! $template  !!}
-    </div>
+    @if($getIcon)
+        <div class="{{ $style ?: $getIcon->template_class }}">
+            {!! $template  !!}
+        </div>
+    @else
+        <div class="{{ $style }}">
+            {!! $template  !!}
+        </div>
+    @endif
 
 @endif

@@ -3,6 +3,7 @@
 namespace TomatoPHP\FilamentIcons;
 
 use Illuminate\Support\ServiceProvider;
+use TomatoPHP\FilamentIcons\Console\ClearIconsCache;
 use TomatoPHP\FilamentIcons\Services\FilamentIconsServices;
 
 
@@ -30,6 +31,10 @@ class FilamentIconsServiceProvider extends ServiceProvider
 
         $this->loadViewComponentsAs('filament', [
             Components\Icon::class,
+        ]);
+
+        $this->commands([
+            ClearIconsCache::class
         ]);
     }
 

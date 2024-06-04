@@ -1,9 +1,9 @@
 ---
-name: Heroicons Picker
+name: Icons Picker & Provider
 slug: 3x1io-tomato-icons
 author_slug: 3x1io
 categories: [developer-tool]
-description: Heroicons Picker and Column for FilamentPHP
+description: Picker & Table Column & Icons Provider for FilamentPHP
 discord_url: 
 docs_url: https://raw.githubusercontent.com/tomatophp/filament-icons/master/README.md
 github_repository: tomatophp/filament-icons

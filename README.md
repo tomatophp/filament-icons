@@ -1,13 +1,13 @@
 ![Screenshot](https://raw.githubusercontent.com/tomatophp/filament-icons/master/arts/3x1io-tomato-icons.jpg)
 
-# Filament Heroicon Picker
+# Filament Icons Picker & Provider
 
 [![Latest Stable Version](https://poser.pugx.org/tomatophp/filament-icons/version.svg)](https://packagist.org/packages/tomatophp/filament-icons)
 [![PHP Version Require](http://poser.pugx.org/tomatophp/filament-icons/require/php)](https://packagist.org/packages/tomatophp/filament-icons)
 [![License](https://poser.pugx.org/tomatophp/filament-icons/license.svg)](https://packagist.org/packages/tomatophp/filament-icons)
 [![Downloads](https://poser.pugx.org/tomatophp/filament-icons/d/total.svg)](https://packagist.org/packages/tomatophp/filament-icons)
 
-Heroicons Picker and Column for FilamentPHP
+Picker & Table Column & Icons Provider for FilamentPHP
 
 ## Screenshots
 

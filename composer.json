@@ -1,7 +1,7 @@
 {
     "name": "tomatophp/filament-icons",
     "type": "library",
-    "description": "Heroicons Picker and Column for FilamentPHP",
+    "description": "Picker & Table Column & Icons Provider for FilamentPHP",
     "keywords": [
         "php",
         "laravel",

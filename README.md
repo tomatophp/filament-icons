@@ -119,7 +119,7 @@ php artisan vendor:publish --tag="filament-icons-config"
 - [Filament Types Manager](https://www.github.com/tomatophp/filament-types)
 - [Filament Plugins](https://www.github.com/tomatophp/filament-plugins)
 - [Filament Helpers Classes](https://www.github.com/tomatophp/filament-helpers)
-- 
+
 ## Support
 
 you can join our discord server to get support [TomatoPHP](https://discord.gg/Xqmt35Uh)

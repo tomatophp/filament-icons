@@ -27,37 +27,41 @@ class Icon extends Model
 
     public function getRows()
     {
+        $iconsCollections = [];
         $iconsFactory = App::make(IconFactory::class);
         $sets = collect($iconsFactory->all());
-        $path = $sets['heroicons']['paths'][0];
-        $icons = File::files($path);
-        $iconsCollections = [];
-        foreach ($icons as $icon) {
-            $getSVGContent = File::get($icon->getRealPath());
-            $iconsArray = [];
+        foreach ($sets as $key=>$iconGroup){
+            $getPathes = $iconGroup['paths'];
+            foreach ($getPathes as $path){
+                $icons = File::files($path);
+                foreach ($icons as $icon) {
+                    $getSVGContent = File::get($icon->getRealPath());
+                    $iconsArray = [];
 
-            $iconsArray['label'] = '
+                    $iconsArray['label'] = '
                 <div class="flex justify-start items-center gap-2">
                     <div class="w-10 h-10 p-2 border border-gary-200 dark:border-gray-700 rounded-lg flex justify-center items-center">
                         '.$getSVGContent.'
                     </div>
                     <div class="flex flex-col gap-1">
                         <h1>'.str($icon->getFileName())
-                                ->replace('.svg', '')
-                                ->replaceFirst('c-','')
-                                ->replaceFirst('o-','')
-                                ->replaceFirst('s-','')
-                                ->replace('-',' ')
-                                ->title().'</h1>
-                        <p class="text-gray-600 dark:text-gray-400">heroicon-'.str($icon->getFileName())->replace('.svg', '').'</p>
+                            ->replace('.svg', '')
+                            ->replaceFirst('c-','')
+                            ->replaceFirst('o-','')
+                            ->replaceFirst('s-','')
+                            ->replace('-',' ')
+                            ->title().'</h1>
+                        <p class="text-gray-600 dark:text-gray-400">'.$iconGroup['prefix'].'-'.str($icon->getFileName())->replace('.svg', '').'</p>
                     </div>
                 </div>
             ';
-            $iconsArray['name'] = 'heroicon-'.str($icon->getFileName())->replace('.svg', '');
-            $iconsArray['provider'] = 'heroicons';
-            $iconsArray['template'] = null;
-            $iconsArray['template_class'] = null;
-            $iconsCollections[] = $iconsArray;
+                    $iconsArray['name'] = $iconGroup['prefix'].'-'.str($icon->getFileName())->replace('.svg', '');
+                    $iconsArray['provider'] = $iconGroup['prefix'];
+                    $iconsArray['template'] = null;
+                    $iconsArray['template_class'] = null;
+                    $iconsCollections[] = $iconsArray;
+                }
+            }
         }
 
         $loadCustomIcons = FilamentIcons::load();

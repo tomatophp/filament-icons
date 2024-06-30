@@ -4,6 +4,7 @@ namespace TomatoPHP\FilamentIcons;
 
 use Illuminate\Support\ServiceProvider;
 use TomatoPHP\FilamentIcons\Console\ClearIconsCache;
+use TomatoPHP\FilamentIcons\Console\InstallFilamentIcons;
 use TomatoPHP\FilamentIcons\Services\FilamentIconsServices;
 
 
@@ -34,7 +35,8 @@ class FilamentIconsServiceProvider extends ServiceProvider
         ]);
 
         $this->commands([
-            ClearIconsCache::class
+            ClearIconsCache::class,
+            InstallFilamentIcons::class
         ]);
     }
 

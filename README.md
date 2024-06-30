@@ -27,6 +27,12 @@ Picker & Table Column & Icons Provider for FilamentPHP
 composer require tomatophp/filament-icons
 ```
 
+after install use this command to cache all icons 
+
+```bash
+php artisan filament-icons:install
+```
+
 ## Usage
 
 ```php
@@ -82,6 +88,13 @@ than you need to clear cache by use this command
 
 ```bash
 php artisan filament-icons:clear
+```
+
+to cache it again use this command
+
+
+```bash
+php artisan filament-icons:install
 ```
 
 you can try add Box Icons using this snap [Box Icon Snap](boxicons-provider-snap.md)

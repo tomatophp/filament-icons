@@ -1,9 +1,11 @@
 @php
     $iconExists = false;
-    try {
-        app(\BladeUI\Icons\Factory::class)->svg($getState());
-         $iconExists = true;
-    }catch (\Exception $e){}
+    if($getState()){
+        try {
+            app(\BladeUI\Icons\Factory::class)->svg($getState());
+             $iconExists = true;
+        }catch (\Exception $e){}
+    }
 @endphp
 @if($iconExists)
 <div>

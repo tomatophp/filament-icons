@@ -17,9 +17,29 @@ class IconPicker extends Select
     protected function setUp(): void
     {
         parent::setUp();
-        $this->searchable();
-        $this->options(Icon::query()->take(10)->pluck('label', 'name')->toArray());
-        $this->getSearchResultsUsing(fn (string $search): array => !empty($search) ? Icon::query()->where('name', 'like', "%{$search}%")->pluck('label', 'name')->toArray() : Icon::query()->limit(50)->pluck('label', 'name')->get()->toArray());
+
+        $this->options(fn () => Icon::query()
+            ->limit(20)
+            ->pluck('label', 'name')
+            ->toArray()
+        );
+
+        $this->getSearchResultsUsing(function (string $search): array {
+
+            if (empty($search)) {
+                return Icon::query()
+                    ->limit(50)
+                    ->pluck('label', 'name')
+                    ->toArray();
+            }
+
+            return Icon::query()
+                ->where('name', 'like', "%{$search}%")
+                ->limit(50)
+                ->pluck('label', 'name')
+                ->toArray();
+        });
+
         $this->allowHtml();
     }
 }

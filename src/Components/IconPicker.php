@@ -24,6 +24,9 @@ class IconPicker extends Select
             ->toArray()
         );
 
+
+        $this->native(false);
+
         $this->getSearchResultsUsing(function (string $search): array {
 
             if (empty($search)) {

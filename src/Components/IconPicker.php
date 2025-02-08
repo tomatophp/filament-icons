@@ -45,6 +45,9 @@ class IconPicker extends Select
                 ->toArray();
         });
 
+
+        $this->getOptionLabelUsing(fn ($state) => Icon::firstWhere('name', '=', $state)?->label);
+
         $this->allowHtml();
     }
 }

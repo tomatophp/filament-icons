@@ -34,6 +34,14 @@ class FilamentIconsServiceProvider extends ServiceProvider
             Components\Icon::class,
         ]);
 
+        //Register Langs
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'filament-icons');
+
+        //Publish Lang
+        $this->publishes([
+            __DIR__.'/../resources/lang' => base_path('lang/vendor/filament-icons'),
+        ], 'filament-icons-lang');
+
         $this->commands([
             ClearIconsCache::class,
             InstallFilamentIcons::class

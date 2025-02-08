@@ -48,6 +48,10 @@ class IconPicker extends Select
 
         $this->getOptionLabelUsing(fn ($state) => Icon::firstWhere('name', '=', $state)?->label);
 
+        $this->label(trans('filament-icons::messages.icon'));
+        $this->searchLabels(trans('filament-icons::messages.search'));
+        $this->searchingMessage(trans('filament-icons::messages.searching'));
+
         $this->allowHtml();
     }
 }

@@ -18,6 +18,8 @@ class IconPicker extends Select
     {
         parent::setUp();
 
+        $this->searchable();
+
         $this->options(fn () => Icon::query()
             ->limit(20)
             ->pluck('label', 'name')

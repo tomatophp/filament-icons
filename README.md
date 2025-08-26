@@ -1,4 +1,4 @@
-![Screenshot](https://raw.githubusercontent.com/tomatophp/filament-icons/master/arts/3x1io-tomato-icons.jpg)
+![Screenshot](https://raw.githubusercontent.com/tomatophp/filament-icons/master/arts/fadymondy-tomato-icons.jpg)
 
 # Filament Icons Picker & Provider
 
@@ -26,7 +26,7 @@ Picker & Table Column & Icons Provider for FilamentPHP
 composer require tomatophp/filament-icons
 ```
 
-after install use this command to cache all icons 
+after install use this command to cache all icons
 
 ```bash
 php artisan filament-icons:install
@@ -77,7 +77,7 @@ public function boot(): void
             "bx bx-accessibility",
             "bx bx-add-to-queue",
             "bx bx-adjust"
-        ])  
+        ])
         ->replace(['bx ', 'bxs-', 'bxl-', 'bx-'])
         ->save();
 }

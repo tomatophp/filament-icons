@@ -1,5 +1,5 @@
 <?php
 
 return [
-    "cache" => true
+    'cache' => true,
 ];

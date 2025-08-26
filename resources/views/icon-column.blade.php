@@ -9,9 +9,9 @@
 @endphp
 @if($iconExists)
 <div>
-    @php $checkIconExists = \TomatoPHP\FilamentIcons\Models\Icon::where('name', $getState())->first() @endphp
+    @php $checkIconExists = \TomatoPHP\FilamentIcons\Facades\FilamentIcons::getIcon($getState()) @endphp
     @if($checkIconExists)
-        <x-icon :name="$getState()" class="h-6 w-6"  />
+        <x-filament-icon :icon="$getState()" style="display: flex; align-items: center; justify-content: center; text-align: center; width: 25px; height: 25px; text-align: center;" />
     @endif
 </div>
 @endif

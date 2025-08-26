@@ -1,19 +1,19 @@
 @if(!empty($icon) && str($icon)->contains('heroicon'))
-    <x-icon :name="$icon" :class="$size"/>
+    <x-icon :name="$icon" :style="$style" :class="$class" />
 @elseif(!empty($icon))
     @php
-        $getIcon = \TomatoPHP\FilamentIcons\Models\Icon::where('name', $icon)->first();
-        $template = $getIcon ?  str($getIcon->template)->replace('{ ICON }', $getIcon->name)->toString() : null;
+        $getIcon = collect(\TomatoPHP\FilamentIcons\Facades\FilamentIcons::getIcon($icon));
+
+        $template = $getIcon ?  str($getIcon['template'])->replace('{ ICON }', $getIcon['name'])->toString() : null;
     @endphp
 
     @if($getIcon)
-        <div class="{{ $style ?: $getIcon->template_class }}">
+        <div class="{{ $class ?: $getIcon['template_class'] }}" style="{{ $style }} display: flex; align-items: center; justify-content: center; font-size: 20px;">
             {!! $template  !!}
         </div>
     @else
-        <div class="{{ $style }}">
+        <div class="{{ $class }}" style="{{ $style }} display: flex; align-items: center; justify-content: center;">
             {!! $template  !!}
         </div>
     @endif
-
 @endif

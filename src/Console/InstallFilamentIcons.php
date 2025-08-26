@@ -3,12 +3,10 @@
 namespace TomatoPHP\FilamentIcons\Console;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\File;
-use TomatoPHP\FilamentIcons\Models\Icon;
+use TomatoPHP\FilamentIcons\Facades\FilamentIcons;
 
 class InstallFilamentIcons extends Command
 {
-
     public $signature = 'filament-icons:install';
 
     public $description = 'cache and collect all icons on the system';
@@ -16,7 +14,7 @@ class InstallFilamentIcons extends Command
     public function handle()
     {
         $this->info('Loading Icons...');
-        Icon::all();
+        FilamentIcons::getIcons();
         $this->info('Icons Has Been Installed And Cached!');
     }
 }

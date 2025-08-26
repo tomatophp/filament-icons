@@ -2,51 +2,37 @@
 
 namespace TomatoPHP\FilamentIcons\Components;
 
-use Filament\Forms\Components\Actions\Action;
-use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Select;
-use Filament\Support\Contracts\HasLabel as LabelInterface;
-use Illuminate\Contracts\Support\Arrayable;
-use BladeUI\Icons\Factory as IconFactory;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\File;
-use TomatoPHP\FilamentIcons\Models\Icon;
+use TomatoPHP\FilamentIcons\Facades\FilamentIcons;
 
 class IconPicker extends Select
 {
     protected function setUp(): void
     {
+        $icons = collect(FilamentIcons::getIcons());
         parent::setUp();
 
         $this->searchable();
 
-        $this->options(fn () => Icon::query()
-            ->limit(20)
-            ->pluck('label', 'name')
-            ->toArray()
-        );
-
+        $this->options(fn () => $icons->whereNotNull('label')->pluck('label', 'name')->toArray());
 
         $this->native(false);
 
-        $this->getSearchResultsUsing(function (string $search): array {
+        $this->getSearchResultsUsing(function (string $search) use ($icons): array {
 
             if (empty($search)) {
-                return Icon::query()
-                    ->limit(50)
+                return $icons->filter(fn ($icon) => str($icon['name'])->contains($search))
                     ->pluck('label', 'name')
                     ->toArray();
             }
 
-            return Icon::query()
-                ->where('name', 'like', "%{$search}%")
-                ->limit(50)
+            return $icons->filter(fn ($icon) => str($icon['name'])->contains($search))
+                ->whereNotNull('label')
                 ->pluck('label', 'name')
                 ->toArray();
         });
 
-
-        $this->getOptionLabelUsing(fn ($state) => Icon::firstWhere('name', '=', $state)?->label);
+        $this->getOptionLabelUsing(fn ($state) => $icons->filter(fn ($icon) => str($icon['name'])->contains($state))->first()['label']);
 
         $this->label(trans('filament-icons::messages.icon'));
         $this->searchLabels(trans('filament-icons::messages.search'));

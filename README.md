@@ -5,6 +5,9 @@
 [![Latest Stable Version](https://poser.pugx.org/tomatophp/filament-icons/version.svg)](https://packagist.org/packages/tomatophp/filament-icons)
 [![License](https://poser.pugx.org/tomatophp/filament-icons/license.svg)](https://packagist.org/packages/tomatophp/filament-icons)
 [![Downloads](https://poser.pugx.org/tomatophp/filament-icons/d/total.svg)](https://packagist.org/packages/tomatophp/filament-icons)
+[![Dependabot Updates](https://github.com/tomatophp/filament-icons/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/tomatophp/filament-icons/actions/workflows/dependabot/dependabot-updates)
+[![PHP Code Styling](https://github.com/tomatophp/filament-icons/actions/workflows/fix-php-code-styling.yml/badge.svg)](https://github.com/tomatophp/filament-icons/actions/workflows/fix-php-code-styling.yml)
+[![Tests](https://github.com/tomatophp/filament-icons/actions/workflows/tests.yml/badge.svg)](https://github.com/tomatophp/filament-icons/actions/workflows/tests.yml)
 
 Picker & Table Column & Icons Provider for FilamentPHP
 

@@ -13,6 +13,11 @@ Picker & Table Column & Icons Provider for FilamentPHP
 
 ## Screenshots
 
+Try it live on [demo.tomatophp.com](https://demo.tomatophp.com).
+
+![Demo dark](https://raw.githubusercontent.com/tomatophp/filament-icons/master/arts/demo-dark.png)
+![Demo light](https://raw.githubusercontent.com/tomatophp/filament-icons/master/arts/demo-light.png)
+
 ![Dark Input](https://raw.githubusercontent.com/tomatophp/filament-icons/master/arts/input-dark.png)
 
 ![Dark Input Select](https://raw.githubusercontent.com/tomatophp/filament-icons/master/arts/input-select-dark.png)

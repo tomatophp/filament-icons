@@ -2,6 +2,12 @@
     "name": "tomatophp/filament-icons",
     "type": "library",
     "description": "Picker & Table Column & Icons Provider for FilamentPHP",
+    "homepage": "https://tomatophp.com/en/plugins/filament-icons",
+    "support": {
+        "issues": "https://github.com/tomatophp/filament-icons/issues",
+        "source": "https://github.com/tomatophp/filament-icons",
+        "docs": "https://tomatophp.com/en/plugins/filament-icons"
+    },
     "keywords": [
         "php",
         "laravel",
